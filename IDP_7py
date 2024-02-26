@@ -1,0 +1,14 @@
+def get_expensive_gift(gift_prices):
+  unique_prices = set(gift_prices)
+  unique_prices_list = list(unique_prices)
+  unique_prices_list.sort(reverse=True)
+  if len(unique_prices_list) >= 2:
+    return unique_prices_list[1]
+  return  "no expensive gift"
+
+def main():
+  gift_prices = map(int, input("Enter Prices: ").split())
+  second_expensive_gift = get_expensive_gift(gift_prices)
+  print("second_expensive_gift: " + str(second_expensive_gift) )
+
+main()
